@@ -41,12 +41,9 @@ namespace OOP.FinalTerm.Exam.Views
 
         /// <summary>
         /// Returns the Director object with user-entered data
-        /// TODO: Students will implement this method to map form controls to Director properties
         /// </summary>
         public DirectorModel GetDirector()
         {
-            // TODO: Map form controls to _director properties
-            // Example:
             _director.FirstName = txtFirstName.Text;
             _director.LastName = txtLastName.Text;
             _director.Genres = txtGenres.Text;
@@ -71,7 +68,6 @@ namespace OOP.FinalTerm.Exam.Views
                 txtLastName.Focus();
                 return;
             }
-
             _directorRepository.AddDirector(GetDirector());
 
             this.DialogResult = DialogResult.OK;

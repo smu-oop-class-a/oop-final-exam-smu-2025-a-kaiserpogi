@@ -45,23 +45,15 @@ namespace OOP.FinalTerm.Exam
 
         private void LoadDirectorsToGrid()
         {
-            try
-            {
-                var directors = _directorRepository.GetAllDirectors();
-                dgvDirectors.DataSource = directors;
+            var directors = _directorRepository.GetAllDirectors();
+            dgvDirectors.DataSource = directors;
 
-                // Hide the ID column (optional but recommended)
-                if (dgvDirectors.Columns.Contains("Id"))
-                {
-                    dgvDirectors.Columns["Id"].Visible = false;
-                }
-
-            }
-            catch (Exception ex)
+            // Hide the ID column (optional but recommended)
+            if (dgvDirectors.Columns.Contains("Id"))
             {
-                MessageBox.Show($"Error loading directors: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvDirectors.Columns["Id"].Visible = false;
             }
-        }
+        }   
 
         #region Event Handlers [DON'T TOUCH]
 
